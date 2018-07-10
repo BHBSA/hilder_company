@@ -19,6 +19,14 @@ class Category(Base):
     source = Column(String(2000))
 
 
+class DevelopmentStage(Base):
+    __tablename__ = 'development_stage'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(2000))
+    request_parameter = Column(String(2000))
+
+
 class City(Base):
     __tablename__ = 'city_company'
 
@@ -38,6 +46,16 @@ class Region(Base):
     city_id = Column(Integer)
 
 
+class Block(Base):
+    __tablename__ = 'block'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(2000))
+    request_parameter = Column(String(2000))
+    source = Column(String(2000))
+    region_id = Column(Integer)
+
+
 def get_sqlalchemy_engine():
     """
     获取一个sqlalchemy engine
@@ -54,5 +72,5 @@ def get_sqlalchemy_engine():
     return engine
 
 
-if __name__ == '__main__':
-    Base.metadata.create_all(get_sqlalchemy_engine())
+# if __name__ == '__main__':
+#     Base.metadata.create_all(get_sqlalchemy_engine())
