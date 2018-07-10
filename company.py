@@ -6,7 +6,9 @@ from lib.mongo import Mongo
 log = LogHandler(__name__)
 
 setting = yaml.load(open('config.yaml'))
-client = Mongo(host=setting['mongo']['host'], port=setting['mongo']['port'], user_name=setting['mongo']['user_name'],
+client = Mongo(host=setting['mongo']['host'],
+               port=setting['mongo']['port'],
+               user_name=setting['mongo']['user_name'],
                password=setting['mongo']['password']).connect
 coll = client[setting['mongo']['db']][setting['mongo']['collection']]
 

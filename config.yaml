@@ -11,6 +11,7 @@ source_config:
     host: 3336
     user_name: root
     password: fangjia123456
+    db_name: company_config
 
 # online
 #mongo:
