@@ -6,6 +6,11 @@ mongo:
     password: 'fangjia123456'
     db: company
     collection: company_test
+source_config:
+    port: 114.80.150.196
+    host: 3336
+    user_name: root
+    password: fangjia123456
 
 # online
 #mongo:
