@@ -13,6 +13,10 @@ class Lagou:
         self.city_url = 'https://www.lagou.com/jobs/allCity.html?'
 
     def get_all_city(self):
+        """
+        run once
+        :return:
+        """
         r = requests.get(self.city_url)
         html = etree.HTML(r.text)
         city_info = html.xpath('//*[@id="main_container"]/div/div/table[2]/tr/td/ul/li/a')
@@ -33,10 +37,5 @@ class Lagou:
     def get_all_category(self):
         pass
 
-    def get_all_page(self):
+    def get_page(self):
         pass
-
-
-if __name__ == '__main__':
-    l = Lagou()
-    l.get_all_city()
